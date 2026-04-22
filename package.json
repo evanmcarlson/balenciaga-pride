@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config config/webpack.config.js",
-    "serve": "webpack-dev-server --mode=development --config config/webpack.config.js",
-    "deploy": "npm run build && gh-pages -d dist"
+    "serve": "webpack-dev-server --mode=development --config config/webpack.config.js"
   },
   "devDependencies": {
     "@babel/parser": "^7.23.9",
