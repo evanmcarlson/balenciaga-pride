@@ -1,3 +1,41 @@
+### Balenciaga Pride AR Shirt
+
+Made with Photoshop, Premeire Pro, A-Frame, and 8th Wall.
+
+![GIF demo](https://i.giphy.com/media/j7MP9e5tobXWmwiWbK/giphy-downsized-large.gif)
+
+### Make it your own
+
+Make this experience in 5 steps, or, watch the [video tutorial](https://www.youtube.com/watch?v=rQf8bSVY3QQ) (starts at 28 minutes).
+
+1. First, take a photo of someone wearing a shirt with a design and crop the image to a perfect square.
+
+![Cropped logo](./src/assets/logo.jpg)
+
+2. Removed everything except for the logo using Adobe Photoshop or similar.
+
+![Transparent logo](./src/assets/logo.png)
+
+3. Use the logo as a mask over a video of a rainbow gradient (also exported as a perfect square).
+
+todo: make a tutorial
+
+4. Finally, upload the image target (the square from step 1)
+
+5. Add the video as a child of the `<named-image-target>` to a square plane in `body.html`. Use the chromakey shader to remove the black background.
+
+```
+  <xrextras-named-image-target name="shirt">
+    <a-plane id="videoEl" material="shader: chromakey; src: #video; color: 0 0 0; opacity: 0"></a-plane>
+  </xrextras-named-image-target>
+```
+
+### Try the experience yourself
+
+![Demo image](./src/assets/demo.jpg)
+
+---
+
 ### Your Exported Project
 This zip contains your project source code, assets, image targets, and configuration needed to build and publish your 8th Wall project. It does not connect to any 8th Wall services, so will work even after the 8th Wall servers are shut down.
 
@@ -44,6 +82,3 @@ window.XR8 ? onxrloaded() : window.addEventListener('xrloaded', onxrloaded)
 - `external/`: Contains dependencies used by your project, loaded in `index.html`.
   - If you are not using the XR Engine, you can remove the xr.js script tag from `index.html` and delete the `external/xr/` folder to save bandwidth.
   - You can also customize whether `face`, `slam`, or both, are loaded on the `data-preload-chunks` attribute.
-
-### Final Notes
-Please reach out to support@8thwall.com with any questions not yet answered in the docs. Thank you for being part of 8th Wall's story!
