@@ -71,12 +71,12 @@ const makeDefaultHtmlLoader = () => ({
   },
 })
 
-const config = {
+const config = (env, argv) => ({
   entry: path.join(srcPath, 'app.js'),
   output: {
     filename: 'bundle.js',
     path: distPath,
-    publicPath: '/balenciaga-pride/',
+    publicPath: argv?.mode === 'development' ? '/' : '/balenciaga-pride/',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -118,6 +118,7 @@ const config = {
   mode: 'production',
   context: srcPath,
   devServer: {
+    allowedHosts: ['.ngrok-free.dev'],
     open: false,
     compress: true,
     hot: true,
@@ -134,6 +135,6 @@ const config = {
       },
     },
   },
-}
+})
 
 module.exports = config

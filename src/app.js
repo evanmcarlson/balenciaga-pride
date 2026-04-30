@@ -7,7 +7,9 @@ AFRAME.registerShader('chromakey', chromaKeyShader)
 
 AFRAME.registerComponent('play-video', {
   init() {
+    console.log('init')
     const playVideo = () => {
+      console.log('found')
       const el = document.getElementById('videoEl')
       el.setAttribute('animation', 'property: material.opacity; from: 0; to: 1; dur: 1000')
       document.getElementById('video').play()
